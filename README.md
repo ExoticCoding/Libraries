@@ -1,6 +1,8 @@
 # Libs
 I've created a simple repository full of libraries I create and I fully intend to add many more as time goes on, many of these are just simple 1 class libs that you can copy into your IDE and use as you please. All of this code is free to use and modify / redistribute at any time.
 
+If you have ideas on what I should add please email me @ swapvinc.6@gmail.com or on skype @ first.last1977 , if you want to make a change create a pull request and I will review it.
+
 ## AnvilRecipe
 My first lib, AnvilRecipe, is a simple but customizable lib which allows easy use to create recipes for anvils, they are shaped (for now) and they can be amount specific, and meta specific. I'll give a couple examples on how to use it here.
 
