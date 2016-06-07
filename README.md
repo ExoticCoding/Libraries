@@ -4,12 +4,12 @@ I've created a simple repository full of libraries I create and I fully intend t
 ## AnvilRecipe
 My first lib, AnvilRecipe, is a simple but customizable lib which allows easy use to create recipes for anvils, they are shaped (for now) and they can be amount specific, and meta specific. I'll give a couple examples on how to use it here.
 
-### In your onEnable
+#### In your onEnable:
 In your onEnable you'll want to have what is below so the class knows where the main class is so it can register the event (on click listener) so it can apply the recipes.
 ````java
 AnvilRecipe.register(this);
 ````
-### Wherever you register recipes
+#### Wherever you register recipes:
 To register recipes it's very simple, to add a recipe you need 3 things, 1: to know if you want it item meta specific or non-item meta specific 2: The three items you want, first will be the left slot, second the right slot, and third the output slot 3: Wether you want it to check item count or not. Registering a recipe would look something like this:
 ````java
 ItemStack[] items = { new ItemStack(Material.STONE), new ItemStack(Material.DIRT), new ItemStack(Material.DIAMOND) };
