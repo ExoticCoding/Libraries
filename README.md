@@ -29,36 +29,36 @@ SignEditor.register(this);
 #### Example usage:
 To open a sign gui in code you can do it a number of ways but the one I found the best was using it to edit signs by right clicking a sign and having a gui automatically open up so you can edit it easily, this is how it's done:
 ````java
-	@EventHandler
-	public void signRightClick(PlayerInteractEvent event) {
-		Player player = event.getPlayer();
-		/*
-		 * This makes sure it's a right click on a block and the player has
-		 * permission to edit the sign
-		 */
-		if (event.getAction() != Action.RIGHT_CLICK_BLOCK || !player.hasPermission("sign.edit"))
-			return;
-		Block block = event.getClickedBlock();
-		/*
-		 * This line makes sure that the block is a sign
-		 */
-		if (!(block.getState() instanceof Sign))
-			return;
-		/*
-		 * This will open a sign gui to the target player editing the target
-		 * block, when done is pressed it will fire the "onSignFinish(...)" in
-		 * the SignResponse, the SignResponse is an interface so the best usage
-		 * would be calling a new instance as an anonymous inner
-		 */
-		SignEditor.openEditor(event.getPlayer(), (Sign) block.getState(), new SignResponse() {
-			@Override
-			public void onSignFinish(SignChangeEvent event) {
-				if (event.getPlayer().hasPermission("sign.color")) {
-					for (int i = 0; i < 4; ++i) {
-						event.setLine(i, ChatColor.translateAlternateColorCodes('&', event.getLine(i)));
-					}
+@EventHandler
+public void signRightClick(PlayerInteractEvent event) {
+	Player player = event.getPlayer();
+	/*
+	 * This makes sure it's a right click on a block and the player has
+	 * permission to edit the sign
+	 */
+	if (event.getAction() != Action.RIGHT_CLICK_BLOCK || !player.hasPermission("sign.edit"))
+		return;
+	Block block = event.getClickedBlock();
+	/*
+	 * This line makes sure that the block is a sign
+	 */
+	if (!(block.getState() instanceof Sign))
+		return;
+	/*
+	 * This will open a sign gui to the target player editing the target
+	 * block, when done is pressed it will fire the "onSignFinish(...)" in
+	 * the SignResponse, the SignResponse is an interface so the best usage
+	 * would be calling a new instance as an anonymous inner
+	 */
+	SignEditor.openEditor(event.getPlayer(), (Sign) block.getState(), new SignResponse() {
+		@Override
+		public void onSignFinish(SignChangeEvent event) {
+			if (event.getPlayer().hasPermission("sign.color")) {
+				for (int i = 0; i < 4; ++i) {
+					event.setLine(i, ChatColor.translateAlternateColorCodes('&', event.getLine(i)));
 				}
 			}
-		});
-	}
+		}
+	});
+}
 ````
