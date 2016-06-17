@@ -20,7 +20,9 @@ AnvilRecipe.registerNewRecipe(RecipeType.META_UNSPECIFIC, items);
 This code would when put in an anvil would turn a piece of stone and a piece of dirt into a piece of diamond. This anvil
 ## Sign Editor
 My second lib, Sign Editor, is a very small and (I think) lightweight solution to opening a sign gui to edit signs in game
-~-------------------~
+
+---
+
 #### In your onEnable:
 In your onEnable you'll want to have what is below so the lib can respond when the sign gets clicked and so it won't throw a null pointer when you try and open using SignEditor.openEditor(...)
 ````java
