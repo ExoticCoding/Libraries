@@ -3,6 +3,8 @@ I've created a simple repository full of libraries I create and I fully intend t
 
 If you have ideas on what I should add please email me @ swapvinc.6@gmail.com or on skype @ first.last1977 , if you want to make a change create a pull request and I will review it.
 
+---
+
 ## Anvil Recipes
 My first lib, AnvilRecipe, is a simple but customizable lib which allows easy use to create recipes for anvils, they are shaped (for now) and they can be amount specific, and meta specific. I'll give a couple examples on how to use it here.
 
@@ -18,10 +20,11 @@ ItemStack[] items = { new ItemStack(Material.STONE), new ItemStack(Material.DIRT
 AnvilRecipe.registerNewRecipe(RecipeType.META_UNSPECIFIC, items);
 ````
 This code would when put in an anvil would turn a piece of stone and a piece of dirt into a piece of diamond. This anvil
-## Sign Editor
-My second lib, Sign Editor, is a very small and (I think) lightweight solution to opening a sign gui to edit signs in game
 
 ---
+
+## Sign Editor
+My second lib, Sign Editor, is a very small and (I think) lightweight solution to opening a sign gui to edit signs in game
 
 #### In your onEnable:
 In your onEnable you'll want to have what is below so the lib can respond when the sign gets clicked and so it won't throw a null pointer when you try and open using SignEditor.openEditor(...)
